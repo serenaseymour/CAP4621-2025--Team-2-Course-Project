@@ -3,9 +3,8 @@
 ### Collaborators: Emily Anderson, Jen Exum, Serena Seymour, Giovanni Bejar
 
 This is a console-based Tic-Tac-Toe game. The player ('X') competes against an AI opponent ('O') using the minimax algorithm, a search technique that evaluates all possible game outcomes to select the most optimal moves.
+![](ttt_sample_draw.png)
 
-
-Devs: Clone the repo locally to your IDE, and push directly main to publish changes
 
 
 ## How it Works:
