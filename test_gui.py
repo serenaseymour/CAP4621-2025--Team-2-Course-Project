@@ -2,7 +2,7 @@
 import unittest
 import tkinter as tk
 from ttt_gui import TTTApp
-from ttt_engine import empty_board, place, winner, is_full
+from ttt_engine import winner, is_full
 
 class GUITest(unittest.TestCase):
     def setUp(self):
