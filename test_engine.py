@@ -72,12 +72,31 @@ class TestTTTEngine(unittest.TestCase):
 
     def test_ai_never_loses(self):
         board = empty_board()
-        human_moves = [0, 1, 3, 6]  # Try to trap AI
-        for i, m in enumerate(human_moves):
-            board = place(board, m, "X")
-            if not terminal(board):
-                ai_move = ai_best_move(board, "O")
-                board = place(board, ai_move, "O")
+        preferred_human_moves = [0, 1, 3, 6]
+        phm_idx = 0
+
+        while not terminal(board):
+            # Human (X)
+            human_move = None
+            while phm_idx < len(preferred_human_moves):
+                m = preferred_human_moves[phm_idx]
+                phm_idx += 1
+                if board[m] == " ":
+                    human_move = m
+                    break
+            if human_move is None:
+                legal = [i for i, c in enumerate(board) if c == " "]
+                if not legal:
+                    break
+                human_move = legal[0]
+            board = place(board, human_move, "X")
+            if terminal(board):
+                break
+
+            # AI (O)
+            ai_move = ai_best_move(board, "O")
+            board = place(board, ai_move, "O")
+
         self.assertTrue(is_full(board) or winner(board) == "O")
 
 if __name__ == "__main__":

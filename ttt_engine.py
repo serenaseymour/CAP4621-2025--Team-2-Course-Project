@@ -113,10 +113,8 @@ def minimax(board: Board, ai: Player, to_move: Player, alpha: int, beta: int, de
         return SearchResult(best_move=best_move, score=best_score, nodes=nodes)
 
 def ai_best_move(board: Board, ai: Player = "O") -> int:
-    to_move = next_player(board)
-    if to_move != ai:
-        raise ValueError("Not AI's turn")
-    res = minimax(board, ai=ai, to_move=to_move, alpha=-10**9, beta=10**9, depth=0)
+    res = minimax(board, ai=ai, to_move=ai, alpha=-10**9, beta=10**9, depth=0)
     if res.best_move is None:
         raise RuntimeError("No move found")
     return res.best_move
+
