@@ -3,7 +3,7 @@
 **Collaborators:** Emily Anderson, Jen Exum, Serena Seymour, Giovanni Bejar  
 
 A **Tic-Tac-Toe** game with an **unbeatable AI** powered by **minimax + alpha-beta pruning**.  
-The player is **‘X’**, the AI is **‘O’**.  
+The first player to make a move is **‘X’**, and the opponent is **‘O’**.  
 
 ![Sample draw](ttt_sample_draw.png)
 
@@ -13,7 +13,7 @@ The player is **‘X’**, the AI is **‘O’**.
 #### CAP4621-2025--Team-2-Course-Project/
 #### ttt_engine.py- Core game logic (board, win checks, minimax)
 #### ttt_gui.py- Tkinter GUI (click-to-play, score panel, buttons)
-#### test_engine.py- 17 unit tests for the engine
+#### test_engine.py- 14 unit tests for the engine
 #### test_gui.py- 1 GUI smoke test (starts app, plays to a draw)
 #### README.md- This file
 
@@ -35,4 +35,4 @@ cd CAP4621-2025--Team-2-Course-Project
 
 ### 3. Start a Game
 Click any empty cell on the board, and an X appears. The AI will respond instantly.
-Use New Game to reset, Play First to swap who starts.
+Use New Game to reset, and Play First to swap who starts. Closing the program will reset the scores.
